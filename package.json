@@ -1,9 +1,9 @@
 {
-  "name": "d2l-axe-toaster",
+  "name": "d2l-labs-toaster",
   "version": "0.0.0",
-  "description": "Webcomponent d2l-axe-toaster following open-wc recommendations",
-  "author": "d2l-axe-toaster",
-  "license": "MIT",
+  "description": "Webcomponent d2l-labs-toaster following open-wc recommendations",
+  "author": "D2L",
+  "license": "Proprietary",
   "main": "index.js",
   "module": "index.js",
   "scripts": {

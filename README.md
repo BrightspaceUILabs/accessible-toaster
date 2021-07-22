@@ -1,4 +1,4 @@
-# \<d2l-axe-toaster>
+# \<d2l-labs-toaster>
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
 >
@@ -18,13 +18,13 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ## Installation
 ```bash
-npm i d2l-axe-toaster
+npm i d2l-labs-toaster
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import 'd2l-axe-toaster/d2l-axe-toaster.js';
+  import 'd2l-axe-toaster/index.js';
 </script>
 
 <d2l-axe-toaster></d2l-axe-toaster>
