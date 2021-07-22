@@ -2,31 +2,19 @@
   "version": 2,
   "tags": [
     {
-      "name": "d2l-axe-toaster",
-      "description": "A component with a title and an action counter",
+      "name": "d2l-labs-toaster",
+      "description": "A component for giving visual and audio feedback for state changes",
       "properties": [
         {
-          "name": "title",
-          "type": "String",
-          "description": "The title of your component",
-          "default": "Hey there"
-        },
-        {
-          "name": "counter",
+          "name": "limit",
           "type": "Number",
-          "description": "An action counter",
-          "default": 0
+          "description": "The number of toasts to appear at a time",
+          "default": "2"
         }
       ],
       "events": [],
       "slots": [],
-      "cssProperties": [
-        {
-          "name": "--d2l-axe-toaster-text-color",
-          "description": "Main Text Color",
-          "type": "Color"
-        }
-      ]
+      "cssProperties": []
     }
   ]
 }
