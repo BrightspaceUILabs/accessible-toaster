@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit-html';
+    import { ToastEvent } from '../index.js';
+
+    function sendToastEvent() {
+      // Let's cook some toast!
+      // the element to dispatch the event from
+      const elm = this;
+      // message = the text the toast will show
+      const message = this.innerText;
+      // description = the text the screen reader will say
+      const description = `${this.innerText} Clicked`
+
+      ToastEvent.dispatch(elm, message, description)
+    }
+
+    render(
+      html`
+        <d2l-labs-toaster limit="3" >
+          <button @click=${sendToastEvent}>Send Toast</button>
+          <button @click=${sendToastEvent}>Here's some more</button>
+        </d2l-labs-toaster>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
