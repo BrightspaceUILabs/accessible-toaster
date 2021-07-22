@@ -24,10 +24,20 @@ npm i d2l-labs-toaster
 ## Usage
 ```html
 <script type="module">
-  import 'd2l-axe-toaster/index.js';
+  import { ToastEvent } from 'd2l-axe-toaster/index.js';
+
+  function sendToastEvent() {
+    ToastEvent.dispatch(this, 'message', 'description');
+  }
+  
+  render(html`
+    <d2l-labs-toaster>
+      <button @click=${sendToastEvent}></button>
+    </d2l-labs-toaster>  
+  `)
 </script>
 
-<d2l-axe-toaster></d2l-axe-toaster>
+
 ```
 
 ## Linting with ESLint, Prettier, and Types
