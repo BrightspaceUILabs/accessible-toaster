@@ -47,4 +47,16 @@ describe('Toaster', function toaster() {
     const axeAlert = this.elm.shadowRoot.querySelector('[role="alert"]');
     expect(axeAlert.innerText).to.equal(description);
   });
+
+  it('Should pass axe tests', async () => {
+    ToastEvent.dispatch(this.target, '', '');
+    await this.elm.updateComplete;
+
+    const axeAlert = this.elm.shadowRoot.querySelector('[role="alert"]');
+    const toastAlert = this.elm.shadowRoot.querySelector('d2l-alert');
+    await toastAlert.updateComplete;
+
+    expect(axeAlert).to.be.accessible();
+    expect(toastAlert).to.be.accessible();
+  });
 });
