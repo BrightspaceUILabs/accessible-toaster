@@ -1,4 +1,4 @@
-# \<d2l-labs-toaster>
+# @brightspace-ui-labs/toaster
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
 >
@@ -18,18 +18,18 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ## Installation
 ```bash
-npm i d2l-labs-toaster
+npm i @brightspace-ui-labs/toaster
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import { ToastEvent } from 'd2l-axe-toaster/index.js';
+  import { ToastEvent } from '@brightspace-ui-labs/toaster';
 
   function sendToastEvent() {
     ToastEvent.dispatch(this, 'message', 'description');
   }
-  
+
   render(html`
     <d2l-labs-toaster>
       <button @click=${sendToastEvent}></button>
