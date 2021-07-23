@@ -96,12 +96,13 @@ class Toaster extends LitElement {
     }
   }
 
-  _addEvent({ detail }) {
+  _addEvent(newEvent) {
+    newEvent.stopPropagation();
+    const { detail } = newEvent;
     if (!ToastEvent.implementationOf(detail)) return;
     let newEvents = [...this._events];
     newEvents.push(detail);
     this._events = newEvents;
-
     // check if this event overflows the limit
     if (this._events.length > this.limit) {
       this._events.forEach((e, i) => {
