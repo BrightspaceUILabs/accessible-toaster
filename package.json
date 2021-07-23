@@ -61,5 +61,8 @@
     "index.js",
     "src/ToastEvent.js",
     "src/Toaster.js"
-  ]
+  ],
+  "release": {
+    "branches": ["main"]
+  }
 }
