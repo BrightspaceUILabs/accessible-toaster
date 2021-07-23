@@ -1,11 +1,12 @@
 {
-  "name": "d2l-labs-toaster",
+  "name": "@brightspace-ui-labs/toaster",
   "version": "0.0.0",
-  "description": "Webcomponent d2l-labs-toaster following open-wc recommendations",
-  "author": "D2L",
-  "license": "Proprietary",
+  "description": "A component for managing and displaying toast events",
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
   "main": "index.js",
   "module": "index.js",
+  "repository": "https://github.com/BrightspaceUILabs/accessible-toaster",
   "scripts": {
     "start": "web-dev-server",
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
@@ -52,5 +53,13 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "src/ToastEvent.js",
+    "src/Toaster.js"
+  ]
 }
