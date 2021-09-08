@@ -21,7 +21,11 @@ class ToastEvent {
     const event = new ToastEvent(message, usedDescription);
 
     elm.dispatchEvent(
-      new CustomEvent('accessible-toast-add', { detail: event, bubbles: true })
+      new CustomEvent('accessible-toast-add', {
+        detail: event,
+        bubbles: true,
+        composed: true,
+      })
     );
   }
 
