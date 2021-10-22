@@ -1,6 +1,7 @@
 import { classMap } from 'lit-html/directives/class-map';
 import { LitElement, html, css } from 'lit-element';
 import { repeat } from 'lit-html/directives/repeat';
+import { nothing } from 'lit-html';
 import ToastEvent from './ToastEvent.js';
 import '@brightspace-ui/core/components/alert/alert-toast';
 
@@ -128,8 +129,11 @@ class Toaster extends LitElement {
         'd2l-insights-event': true,
         'd2l-insights-event-close': e.closing,
       };
+      const visibleToast = e.visible
+        ? html`<d2l-alert class="${classMap(classes)}">${e.message}</d2l-alert>`
+        : nothing;
       return html`
-        <d2l-alert class="${classMap(classes)}">${e.message}</d2l-alert>
+        ${visibleToast}
         <div class="d2l-insights-hidden" role="alert">${e.description}</div>
       `;
     };

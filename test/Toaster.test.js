@@ -70,4 +70,17 @@ describe('Toaster', function toasterTests() {
     expect(axeAlert).to.be.accessible();
     expect(toastAlert).to.be.accessible();
   });
+
+  it('Should not show invisible toasts', async () => {
+    const { elm, target } = await initToaster();
+
+    ToastEvent.dispatch(target, 'Test Invisible Toasts', true, false);
+    await elm.updateComplete;
+
+    const axeAlert = elm.shadowRoot.querySelector('[role="alert"]');
+    const toastAlert = elm.shadowRoot.querySelector('d2l-alert');
+
+    expect(axeAlert).to.be.accessible();
+    expect(toastAlert).to.be.null;
+  });
 });

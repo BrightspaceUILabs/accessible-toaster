@@ -1,7 +1,8 @@
 class ToastEvent {
-  constructor(message, description) {
+  constructor(message, description, visible = true) {
     this._message = message;
     this._description = description;
+    this._visible = visible;
     this._isRendered = false;
     this._id = '';
     this._killTimeout = undefined;
@@ -16,9 +17,9 @@ class ToastEvent {
     return obj.constructor.name === 'ToastEvent';
   }
 
-  static dispatch(elm, message, description) {
+  static dispatch(elm, message, description, visible = true) {
     const usedDescription = description === true ? message : description;
-    const event = new ToastEvent(message, usedDescription);
+    const event = new ToastEvent(message, usedDescription, visible);
 
     elm.dispatchEvent(
       new CustomEvent('accessible-toast-add', {
@@ -42,6 +43,10 @@ class ToastEvent {
 
   get description() {
     return this._description;
+  }
+
+  get visible() {
+    return this._visible;
   }
 
   get id() {
