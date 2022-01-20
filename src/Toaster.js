@@ -4,6 +4,7 @@ import { repeat } from 'lit-html/directives/repeat';
 import { nothing } from 'lit-html';
 import ToastEvent from './ToastEvent.js';
 import '@brightspace-ui/core/components/alert/alert-toast';
+import '@brightspace-ui/core/components/offscreen/offscreen.js';
 
 class Toaster extends LitElement {
   static get properties() {
@@ -129,24 +130,30 @@ class Toaster extends LitElement {
         'd2l-insights-event': true,
         'd2l-insights-event-close': e.closing,
       };
-      const visibleToast = e.visible
+      return e.visible
         ? html`<d2l-alert class="${classMap(classes)}">${e.message}</d2l-alert>`
         : nothing;
-      return html`
-        ${visibleToast}
-        <div class="d2l-insights-hidden" role="alert">${e.description}</div>
-      `;
     };
+
+    const _renderA11y = e =>
+      html`<d2l-offscreen role="alert">${e.description}</d2l-offscreen>`;
 
     return html`
       <slot></slot>
-      <div class="d2l-insights-event-container">
+      <div class="d2l-insights-event-container" aria-hidden="true">
         ${repeat(
           this._events,
           event => event.id,
           event => _renderEvent(event)
         )}
       </div>
+      <d2l-offscreen aria-live="assertive">
+        ${repeat(
+          this._events,
+          event => event.id,
+          event => _renderA11y(event)
+        )}
+      </d2l-offscreen>
     `;
   }
 
