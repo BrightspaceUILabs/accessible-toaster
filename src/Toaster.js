@@ -1,6 +1,6 @@
-import { classMap } from 'lit-html/directives/class-map';
+import { classMap } from 'lit-html/directives/class-map.js';
 import { LitElement, html, css } from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat';
+import { repeat } from 'lit-html/directives/repeat.js';
 import { nothing } from 'lit-html';
 import ToastEvent from './ToastEvent.js';
 import '@brightspace-ui/core/components/alert/alert-toast';
@@ -164,8 +164,8 @@ class Toaster extends LitElement {
      * of time for the text to render
      */
     setTimeout(() => {
-      const eventEls = this.shadowRoot.querySelectorAll('.d2l-insights-event');
-      if (eventEls.length > 0) {
+      const eventEls = this.shadowRoot?.querySelectorAll('.d2l-insights-event');
+      if (eventEls && eventEls.length > 0) {
         const lastEvent = eventEls[eventEls.length - 1];
         const height = `-${lastEvent.offsetHeight}px`;
         lastEvent.style.marginBottom = height;
