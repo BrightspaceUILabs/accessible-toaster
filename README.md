@@ -70,13 +70,13 @@ npm run format:prettier
 ## Testing with Web Test Runner
 To run the suite of Web Test Runner tests, run
 ```bash
-npm run test
+npm run test:headless
 ```
 
 To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&#34;&gt;TDD&lt;/abbr&gt;, for example), run
 
 ```bash
-npm run test:watch
+npm run test:headless:watch
 ```
 
 
