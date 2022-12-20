@@ -2,11 +2,12 @@ import { classMap } from 'lit-html/directives/class-map.js';
 import { LitElement, html, css } from 'lit-element';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { nothing } from 'lit-html';
+import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 import ToastEvent from './ToastEvent.js';
 import '@brightspace-ui/core/components/alert/alert-toast';
 import '@brightspace-ui/core/components/offscreen/offscreen.js';
 
-class Toaster extends LitElement {
+class Toaster extends RtlMixin(LitElement) {
   static get properties() {
     return {
       limit: { type: Number, attribute: true },
@@ -24,6 +25,11 @@ class Toaster extends LitElement {
           position: fixed;
           transform: translateX(-50%);
           width: 500px;
+        }
+        :host([dir='rtl']) .d2l-insights-event-container {
+          margin: auto;
+          margin-right: 50vw;
+          transform: translateX(50%);
         }
         .d2l-insights-event {
           box-shadow: 0 5px 10px rgba(0.23, 0.23, 0.23, 0.2);
