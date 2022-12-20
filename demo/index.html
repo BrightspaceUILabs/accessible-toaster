@@ -1,41 +1,21 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
+  <link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+  <script type="module" src="/demo/demo-view.js"></script>
+  <title>Accessible Toaster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 </head>
+<style>
+  html, body {
+    min-height: 100%;
+  }
+  body {
+    background-color: white;
+  }
+</style>
 <body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit-html';
-    import { ToastEvent } from '../index.js';
-
-    function sendToastEvent() {
-      // Let's cook some toast!
-      // the element to dispatch the event from
-      const elm = this;
-      // message = the text the toast will show
-      const message = this.innerText;
-      // description = the text the screen reader will say
-      const description = `${this.innerText} Clicked`
-
-      ToastEvent.dispatch(elm, message, description)
-    }
-
-    render(
-      html`
-        <d2l-labs-toaster limit="3" >
-          <button @click=${sendToastEvent}>Send Toast</button>
-          <button @click=${sendToastEvent}>Here's some more</button>
-        </d2l-labs-toaster>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+  <d2l-insights-demo-view></d2l-insights-demo-view>
 </body>
 </html>

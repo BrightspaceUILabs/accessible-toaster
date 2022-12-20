@@ -8,7 +8,7 @@
   "module": "index.js",
   "repository": "https://github.com/BrightspaceUILabs/accessible-toaster",
   "scripts": {
-    "start": "web-dev-server",
+    "start": "web-dev-server --node-resolve --open --watch --app-index demo/index.html",
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
     "test:headless": "web-test-runner",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/testing": "^3",
-    "@web/dev-server": "^0.1.18",
+    "@web/dev-server": "^0.1",
     "@web/test-runner": "^0.12.20",
     "@web/test-runner-playwright": "^0.9.0",
     "eslint": "^7.31.0",
