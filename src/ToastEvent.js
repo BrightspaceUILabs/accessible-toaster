@@ -42,6 +42,13 @@ class ToastEvent {
   }
 
   get description() {
+    if (!this._isRendered) {
+      this._isRendered = true;
+      this._killTimeout = setTimeout(() => {
+        this._remove();
+      }, 4000);
+    }
+
     return this._description;
   }
 
