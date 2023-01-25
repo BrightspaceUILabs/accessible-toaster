@@ -111,10 +111,10 @@ class Toaster extends RtlMixin(LitElement) {
     let newEvents = [...this._events];
     newEvents.push(detail);
     this._events = newEvents;
-    // check if this event overflows the limit
-    if (this._events.length > this.limit) {
+    // check if this event overflows the limit -- only apply limit to visible elements
+    if (this._events.filter(e => e.visible).length > this.limit) {
       this._events.forEach((e, i) => {
-        if (i < this._events.length - this.limit) {
+        if (i < this._events.length - this.limit && e.visible) {
           e.markForRemoval();
         }
       });
