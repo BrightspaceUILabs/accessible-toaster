@@ -31,23 +31,13 @@ class ToastEvent {
   }
 
   get message() {
-    if (!this._isRendered) {
-      this._isRendered = true;
-      this._killTimeout = setTimeout(() => {
-        this._remove();
-      }, 4000);
-    }
+    this._setKillTimeout();
 
     return this._message;
   }
 
   get description() {
-    if (!this._isRendered) {
-      this._isRendered = true;
-      this._killTimeout = setTimeout(() => {
-        this._remove();
-      }, 4000);
-    }
+    this._setKillTimeout();
 
     return this._description;
   }
@@ -78,6 +68,15 @@ class ToastEvent {
       }, 300);
     }
     this.closing = true;
+  }
+
+  _setKillTimeout() {
+    if (!this._isRendered) {
+      this._isRendered = true;
+      this._killTimeout = setTimeout(() => {
+        this._remove();
+      }, 4000);
+    }
   }
 }
 
