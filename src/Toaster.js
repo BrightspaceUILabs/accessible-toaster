@@ -1,7 +1,6 @@
-import { classMap } from 'lit-html/directives/class-map.js';
-import { LitElement, html, css } from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { nothing } from 'lit-html';
+import { classMap } from 'lit/directives/class-map.js';
+import { LitElement, html, css, nothing } from 'lit';
+import { repeat } from 'lit/directives/repeat.js';
 import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 import ToastEvent from './ToastEvent.js';
 import '@brightspace-ui/core/components/alert/alert-toast';
