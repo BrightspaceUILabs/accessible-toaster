@@ -1,3 +1,5 @@
+> Use `d2l-alert-toast` if possible, which supports [Multiple Toast Alerts](https://github.com/BrightspaceUI/core/tree/main/components/alert#multiple-toast-alerts)
+
 # @brightspace-ui-labs/toaster
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
